@@ -1,2 +1,10 @@
-<h1>TicketPrices#index</h1>
-<p>Find me in app/views/ticket_prices/index.html.erb</p>
+<h1>Metro İstanbul Bilet Fiyatları</h1>
+
+<% @ticket_prices.each do |ticket_type| %>
+  <h2><%= ticket_type['Type'] %></h2>
+  <ul>
+    <% ticket_type['TicketPrices'].each do |ticket_price| %>
+      <li><%= ticket_price['Name'] %>: <%= ticket_price['Price'] %></li>
+    <% end %>
+  </ul>
+<% end %>
