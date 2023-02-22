@@ -1,10 +1,15 @@
-<h1>Metro İstanbul Bilet Fiyatları</h1>
-
+<h1 class="text-center my-5">Metro İstanbul Bilet Fiyatları</h1>
 <% @ticket_prices.each do |ticket_type| %>
-  <h2><%= ticket_type['Type'] %></h2>
-  <ul>
-    <% ticket_type['TicketPrices'].each do |ticket_price| %>
-      <li><%= ticket_price['Name'] %>: <%= ticket_price['Price'] %></li>
-    <% end %>
-  </ul>
+  <div class="card my-3">
+    <div class="card-header">
+      <h2 class="card-title"><%= ticket_type['Type'] %></h2>
+    </div>
+    <div class="card-body">
+      <ul class="list-group">
+        <% ticket_type['TicketPrices'].each do |ticket_price| %>
+          <li class="list-group-item"><%= ticket_price['Name'] %>: <%= ticket_price['Price'] %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 <% end %>
